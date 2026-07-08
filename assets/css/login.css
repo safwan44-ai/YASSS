@@ -1,0 +1,48 @@
+.auth-page{
+    padding:100px 0;
+    background:#f8f8f8;
+}
+
+.auth-box{
+    width:420px;
+    margin:auto;
+    background:#fff;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.auth-box h2{
+    margin-bottom:25px;
+}
+
+.auth-box input{
+    width:100%;
+    padding:15px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+
+.auth-box button{
+    width:100%;
+    padding:15px;
+    border:none;
+    margin-top:10px;
+}
+
+.auth-box p{
+    margin-top:15px;
+}
+
+.auth-box a{
+    color:#ef3b3a;
+    text-decoration:none;
+}
+
+@media(max-width:500px){
+    .auth-box{
+        width:90%;
+    }
+}

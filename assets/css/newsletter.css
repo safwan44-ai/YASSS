@@ -1,0 +1,231 @@
+.newsletter{
+
+    padding:100px 0;
+
+    background:#111;
+
+    color:#fff;
+
+    text-align:center;
+
+}
+
+.newsletter h2{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.newsletter p{
+
+    color:#ddd;
+
+    margin-bottom:35px;
+
+}
+
+.newsletter form{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.newsletter input{
+
+    width:400px;
+
+    max-width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:8px;
+
+    outline:none;
+
+    font-size:16px;
+
+}
+
+.newsletter button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:8px;
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.newsletter button:hover{
+
+    background:#d52d2c;
+
+}
+.newsletter{
+
+    padding:100px 0;
+
+    background:#111;
+
+}
+
+.newsletter-container{
+
+    text-align:center;
+
+}
+
+.newsletter h2{
+
+    color:#fff;
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.newsletter p{
+
+    color:#ddd;
+
+    max-width:650px;
+
+    margin:0 auto 40px;
+
+    line-height:1.8;
+
+}
+
+.newsletter-form{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.newsletter-form input{
+
+    width:420px;
+
+    max-width:100%;
+
+    padding:18px 20px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+.newsletter-form button{
+
+    padding:18px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.newsletter-form button:hover{
+
+    background:#d62828;
+
+}
+.newsletter{
+    padding:100px 0;
+    background:#111;
+    color:#fff;
+}
+
+.newsletter-container{
+    max-width:700px;
+    margin:auto;
+    text-align:center;
+}
+
+.newsletter h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.newsletter p{
+    color:#ccc;
+    margin-bottom:40px;
+    line-height:1.8;
+}
+
+.newsletter form{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.newsletter input{
+    width:420px;
+    max-width:100%;
+    padding:16px 20px;
+    border:none;
+    border-radius:8px;
+    outline:none;
+    font-size:16px;
+}
+
+.newsletter button{
+    padding:16px 35px;
+    border:none;
+    background:#ef3b3a;
+    color:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.newsletter button:hover{
+    background:#d92c2b;
+}
