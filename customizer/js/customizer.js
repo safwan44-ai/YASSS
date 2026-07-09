@@ -1,0 +1,1 @@
+<script src="/YASSS/customizer/js/customizer.js"></script>

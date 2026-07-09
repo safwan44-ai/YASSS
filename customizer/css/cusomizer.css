@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+/* ===========================
+   MAIN LAYOUT
+=========================== */
+
+.customizer-container{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+}
+
+/* LEFT */
+
+.preview-panel{
+
+    flex:2;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:50px;
+
+    background:#eef2f7;
+
+}
+
+.tshirt-box{
+
+    width:550px;
+    background:#fff;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.tshirt-box img{
+
+    width:100%;
+    display:block;
+
+}
+
+/* RIGHT */
+
+.control-panel{
+
+    flex:1;
+
+    background:#ffffff;
+
+    padding:40px;
+
+    border-left:1px solid #eee;
+
+}
+
+.control-panel h2{
+
+    font-size:30px;
+
+    margin-bottom:25px;
+
+    color:#111;
+
+}
+
+.upload-box{
+
+    border:2px dashed #ef3b3a;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+.upload-box i{
+
+    font-size:55px;
+
+    color:#ef3b3a;
+
+    margin-bottom:15px;
+
+}
+
+.upload-box input{
+
+    margin-top:20px;
+
+}
+
+.report{
+
+    background:#fafafa;
+
+    border-radius:15px;
+
+    padding:20px;
+
+    margin-top:20px;
+
+}
+
+.report p{
+
+    margin:15px 0;
+
+    font-size:16px;
+
+}
+
+.upload-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    margin-top:30px;
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+    border:none;
+
+    border-radius:10px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upload-btn:hover{
+
+    background:#111;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.customizer-container{
+
+    flex-direction:column;
+
+}
+
+.preview-panel{
+
+    padding:30px;
+
+}
+
+.control-panel{
+
+    border-left:none;
+
+    border-top:1px solid #ddd;
+
+}
+
+.tshirt-box{
+
+    width:100%;
+
+    max-width:500px;
+
+}
+
+}
