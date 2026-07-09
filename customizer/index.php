@@ -13,7 +13,7 @@ body{
 
     <title>DTF Design Customizer | YASSS</title>
 
-    <link rel="stylesheet" href="/YASSS/customizer/css/customizer.css?v=1">
+    <link rel="stylesheet" href="css/customizer.css">
 
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
