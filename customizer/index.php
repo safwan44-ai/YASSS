@@ -3,11 +3,6 @@
 
 <head>
 
-    <style>
-body{
-    background:red;
-}
-</style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -24,21 +19,34 @@ body{
 
 <div class="customizer-container">
 
-    <!-- Left Side -->
+    <!-- LEFT SIDE -->
 
     <div class="preview-panel">
 
         <h2>T-Shirt Preview</h2>
 
-            <div class="tshirt-box">
+        <div class="tshirt-box">
 
-                <img src="../assets/images/products/white-tshirt-front.png" alt="White T-Shirt">
+            <!-- T-Shirt -->
 
-            </div>
+            <img
+                    src="../assets/images/products/t-shirt-001/tshirt-white-front.png"
+                    class="shirt"
+                    alt="White T-Shirt">
+
+            <!-- Uploaded Design Preview -->
+
+            <img
+                id="designPreview"
+                class="design-preview"
+                src=""
+                alt="Design Preview">
+
+        </div>
 
     </div>
 
-    <!-- Right Side -->
+    <!-- RIGHT SIDE -->
 
     <div class="control-panel">
 
@@ -50,7 +58,10 @@ body{
 
             <p>Upload Your Design</p>
 
-            <input type="file">
+            <input
+                type="file"
+                id="designUpload"
+                accept=".png,.jpg,.jpeg,.webp">
 
         </div>
 

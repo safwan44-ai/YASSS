@@ -196,3 +196,33 @@ body{
 }
 
 }
+.tshirt-box{
+
+    position:relative;
+
+}
+
+.shirt{
+
+    width:100%;
+    display:block;
+
+}
+
+.design-preview{
+
+    position:absolute;
+
+    top:120px;
+
+    left:150px;
+
+    width:180px;
+
+    display:none;
+
+    cursor:move;
+
+    z-index:5;
+
+}
