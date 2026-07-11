@@ -226,3 +226,39 @@ body{
     z-index:5;
 
 }
+
+.tshirt-box{
+    width:550px;
+    background:#fff;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.shirt{
+    width:100%;
+    display:block;
+}
+
+.design-preview{
+
+    position:absolute;
+
+    width:170px;
+
+    top:50%;
+
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    display:none;
+
+    z-index:100;
+}
