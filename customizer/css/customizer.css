@@ -11,38 +11,46 @@ body{
     background:#f4f6f9;
 }
 
-/* ===========================
-   MAIN LAYOUT
-=========================== */
-
 .customizer-container{
-    width:100%;
-    min-height:100vh;
     display:flex;
+    min-height:100vh;
 }
 
-/* LEFT */
+/* =========================
+   LEFT PANEL
+========================= */
 
 .preview-panel{
 
     flex:2;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:50px;
-
     background:#eef2f7;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    padding:40px;
+
+}
+
+.preview-panel h2{
+
+    margin-bottom:25px;
+    font-size:28px;
 
 }
 
 .tshirt-box{
 
+    position:relative;
+
     width:550px;
+
     background:#fff;
 
-    padding:30px;
+    padding:25px;
 
     border-radius:20px;
 
@@ -50,34 +58,79 @@ body{
 
 }
 
-.tshirt-box img{
+.shirt{
 
     width:100%;
     display:block;
 
 }
 
-/* RIGHT */
+/* =========================
+   PRINT AREA
+========================= */
+
+.print-area{
+
+    position:absolute;
+
+    left:50%;
+    top:48%;
+
+    transform:translate(-50%,-50%);
+
+    width:300px;
+    height:360px;
+
+    overflow:hidden;
+
+}
+
+/* =========================
+   DESIGN PREVIEW
+========================= */
+
+.design-preview{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:translate(-50%,-50%);
+
+    width:170px;
+
+    display:none;
+
+    cursor:move;
+
+    user-select:none;
+
+    z-index:10;
+
+}
+
+/* =========================
+   RIGHT PANEL
+========================= */
 
 .control-panel{
 
     flex:1;
 
-    background:#ffffff;
+    background:#fff;
 
     padding:40px;
 
-    border-left:1px solid #eee;
+    border-left:1px solid #ececec;
 
 }
 
 .control-panel h2{
 
-    font-size:30px;
-
     margin-bottom:25px;
 
-    color:#111;
+    font-size:28px;
 
 }
 
@@ -87,17 +140,15 @@ body{
 
     border-radius:15px;
 
-    padding:30px;
+    padding:35px;
 
     text-align:center;
-
-    margin-bottom:30px;
 
 }
 
 .upload-box i{
 
-    font-size:55px;
+    font-size:50px;
 
     color:#ef3b3a;
 
@@ -113,13 +164,13 @@ body{
 
 .report{
 
-    background:#fafafa;
+    margin-top:30px;
 
-    border-radius:15px;
+    background:#fafafa;
 
     padding:20px;
 
-    margin-top:20px;
+    border-radius:15px;
 
 }
 
@@ -131,23 +182,61 @@ body{
 
 }
 
-.upload-btn{
+.design-controls{
 
-    width:100%;
+    display:flex;
 
-    padding:15px;
+    gap:10px;
 
-    margin-top:30px;
+    margin-top:25px;
 
-    background:#ef3b3a;
+}
 
-    color:#fff;
+.design-controls button{
+
+    flex:1;
+
+    height:50px;
 
     border:none;
 
     border-radius:10px;
 
-    font-size:17px;
+    background:#111;
+
+    color:#fff;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.design-controls button:hover{
+
+    background:#ef3b3a;
+
+}
+
+.upload-btn{
+
+    width:100%;
+
+    margin-top:25px;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+    font-size:18px;
 
     cursor:pointer;
 
@@ -161,104 +250,37 @@ body{
 
 }
 
-/* ===========================
+/* =========================
    RESPONSIVE
-=========================== */
+========================= */
 
 @media(max-width:992px){
 
-.customizer-container{
+    .customizer-container{
 
-    flex-direction:column;
+        flex-direction:column;
 
-}
+    }
 
-.preview-panel{
+    .preview-panel{
 
-    padding:30px;
+        padding:25px;
 
-}
+    }
 
-.control-panel{
+    .control-panel{
 
-    border-left:none;
+        border-left:none;
 
-    border-top:1px solid #ddd;
+        border-top:1px solid #ddd;
 
-}
+    }
 
-.tshirt-box{
+    .tshirt-box{
 
-    width:100%;
+        width:100%;
+        max-width:520px;
 
-    max-width:500px;
+    }
 
-}
-
-}
-.tshirt-box{
-
-    position:relative;
-
-}
-
-.shirt{
-
-    width:100%;
-    display:block;
-
-}
-
-.design-preview{
-
-    position:absolute;
-
-    top:120px;
-
-    left:150px;
-
-    width:180px;
-
-    display:none;
-
-    cursor:move;
-
-    z-index:5;
-
-}
-
-.tshirt-box{
-    width:550px;
-    background:#fff;
-    padding:30px;
-    border-radius:20px;
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
-
-    position:relative;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-
-.shirt{
-    width:100%;
-    display:block;
-}
-
-.design-preview{
-
-    position:absolute;
-
-    width:170px;
-
-    top:50%;
-
-    left:50%;
-
-    transform:translate(-50%,-50%);
-
-    display:none;
-
-    z-index:100;
 }
