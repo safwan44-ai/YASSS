@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <meta charset="UTF-8">
@@ -18,23 +19,50 @@
 
 <div class="customizer-container">
 
-    <!-- LEFT SIDE -->
+    <!-- =========================
+         LEFT PANEL
+    ========================== -->
+
     <div class="preview-panel">
 
         <h2>T-Shirt Preview</h2>
 
+        <!-- Front / Back Switch -->
+
+        <div class="view-switch">
+
+            <button
+                id="frontView"
+                class="active-view"
+                type="button">
+
+                Front
+
+            </button>
+
+            <button
+                id="backView"
+                type="button">
+
+                Back
+
+            </button>
+
+        </div>
+
+        <!-- T-Shirt Preview -->
+
         <div class="tshirt-box">
 
-            <!-- T-Shirt Image -->
             <img
                 src="../assets/images/products/t-shirt-001/tshirt-white-front.png"
                 class="shirt"
                 alt="White T-Shirt">
 
             <!-- Print Area -->
+
             <div class="print-area">
 
-                <!-- Uploaded Design -->
                 <img
                     id="designPreview"
                     class="design-preview"
@@ -48,10 +76,15 @@
 
     </div>
 
-    <!-- RIGHT SIDE -->
+    <!-- =========================
+         RIGHT PANEL
+    ========================== -->
+
     <div class="control-panel">
 
         <h2>Design Analysis</h2>
+
+        <!-- Upload -->
 
         <div class="upload-box">
 
@@ -66,31 +99,90 @@
 
         </div>
 
-        <div class="report">
+        <!-- Report -->
 
-            <p><strong>Resolution:</strong> <span id="resolution">--</span></p>
+<div class="report">
 
-            <p><strong>File Size:</strong> <span id="filesize">--</span></p>
+    <p><strong>Resolution:</strong> <span id="resolution">--</span></p>
 
-            <p><strong>File Type:</strong> <span id="filetype">--</span></p>
+    <p><strong>File Size:</strong> <span id="filesize">--</span></p>
 
-            <p><strong>Print Quality:</strong> <span id="quality">Waiting...</span></p>
+    <p><strong>File Type:</strong> <span id="filetype">--</span></p>
 
-        </div>
+    <p><strong>Print Quality:</strong> <span id="quality">Waiting...</span></p>
 
-        <div class="design-controls">
+</div>
 
-            <button type="button" id="rotateLeft">
-                <i class="fa-solid fa-rotate-left"></i>
-            </button>
+<!-- =========================
+     T-Shirt Color
+========================= -->
 
-            <button type="button" id="rotateRight">
-                <i class="fa-solid fa-rotate-right"></i>
-            </button>
+<div class="color-section">
 
-        </div>
+    <h3>T-Shirt Color</h3>
 
-        <button class="upload-btn" type="button">
+    <div class="color-options">
+
+        <button
+            id="whiteColor"
+            class="color-btn active-color"
+            type="button">
+
+            White
+
+        </button>
+
+        <button
+            id="blackColor"
+            class="color-btn"
+            type="button">
+
+            Black
+
+        </button>
+
+        <button
+            id="blueColor"
+            class="color-btn"
+            type="button">
+
+            Blue
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =========================
+     Rotate Controls
+========================= -->
+
+<div class="design-controls">
+
+    <button
+        id="rotateLeft"
+        type="button">
+
+        <i class="fa-solid fa-rotate-left"></i>
+
+    </button>
+
+    <button
+        id="rotateRight"
+        type="button">
+
+        <i class="fa-solid fa-rotate-right"></i>
+
+    </button>
+
+</div>
+
+        <!-- Continue -->
+
+        <button
+            class="upload-btn"
+            type="button">
 
             Continue
 
@@ -103,4 +195,5 @@
 <script src="js/customizer.js"></script>
 
 </body>
+
 </html>

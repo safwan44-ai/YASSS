@@ -284,3 +284,237 @@ body{
     }
 
 }
+
+/* ===========================
+   VIEW SWITCH
+=========================== */
+
+.view-switch{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:25px;
+
+}
+
+.view-switch button{
+
+    padding:12px 28px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ececec;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.view-switch button:hover{
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+}
+
+.active-view{
+
+    background:#ef3b3a !important;
+
+    color:#fff;
+
+}
+
+/* ==========================
+   VIEW SWITCH
+========================== */
+
+.view-switch{
+
+    display:flex;
+
+    gap:12px;
+
+    margin-bottom:20px;
+
+}
+
+.view-switch button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ececec;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.view-switch button:hover{
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+}
+
+.active-view{
+
+    background:#ef3b3a !important;
+
+    color:#fff;
+
+}
+
+/* ==========================
+   COLOR SWITCH
+========================== */
+
+.color-section{
+
+    margin-top:30px;
+
+}
+
+.color-section h3{
+
+    margin-bottom:15px;
+
+    font-size:18px;
+
+}
+
+.color-options{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.color-btn{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#ececec;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.color-btn:hover{
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+}
+
+.active-color{
+
+    background:#ef3b3a;
+
+    color:#fff;
+
+}
+
+/* =====================================
+   T-SHIRT COLOR SECTION
+===================================== */
+
+.color-section{
+
+    margin-top:30px;
+
+}
+
+.color-section h3{
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:15px;
+
+    color:#222;
+
+}
+
+.color-options{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.color-btn{
+
+    flex:1;
+
+    padding:12px 15px;
+
+    border:2px solid #e5e5e5;
+
+    border-radius:10px;
+
+    background:#fff;
+
+    color:#333;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:all .3s ease;
+
+}
+
+.color-btn:hover{
+
+    border-color:#ef3b3a;
+
+    background:#fff5f5;
+
+}
+
+.active-color{
+
+    background:#ef3b3a;
+
+    border-color:#ef3b3a;
+
+    color:#fff;
+
+}

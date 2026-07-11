@@ -29,6 +29,106 @@ let offsetX = 0;
 let offsetY = 0;
 
 /* ==========================
+   DESIGN STATE
+========================== */
+
+const designStates = {
+
+    white: {
+
+        front: {
+            x: 65,
+            y: 80,
+            width: 170,
+            rotation: 0
+        },
+
+        back: {
+            x: 65,
+            y: 80,
+            width: 170,
+            rotation: 0
+        }
+
+    },
+
+    black: {
+
+        front: {
+            x: 65,
+            y: 80,
+            width: 170,
+            rotation: 0
+        },
+
+        back: {
+            x: 65,
+            y: 80,
+            width: 170,
+            rotation: 0
+        }
+
+    },
+
+    blue: {
+
+        front: {
+            x: 65,
+            y: 80,
+            width: 170,
+            rotation: 0
+        },
+
+        back: {
+            x: 65,
+            y: 80,
+            width: 170,
+            rotation: 0
+        }
+
+    }
+
+};
+/* ==========================
+   VIEW MANAGEMENT
+========================== */
+
+let currentView = "front";
+
+const designState = {
+
+    front:{
+
+        x:65,
+        y:80,
+        width:170,
+        rotation:0,
+        image:""
+
+    },
+
+    back:{
+
+        x:65,
+        y:80,
+        width:170,
+        rotation:0,
+        image:""
+
+    }
+
+};
+let currentWidth = 170;
+let currentRotation = 0;
+
+let posX = 65;
+let posY = 80;
+
+let dragging = false;
+let offsetX = 0;
+let offsetY = 0;
+
+/* ==========================
    UPLOAD IMAGE
 ========================== */
 
@@ -206,3 +306,214 @@ rotateRight.addEventListener("click", function () {
     updatePreview();
 
 });
+
+/* ==========================
+   FRONT / BACK SWITCH
+========================== */
+
+const shirt = document.querySelector(".shirt");
+
+const frontBtn = document.getElementById("frontView");
+
+const backBtn = document.getElementById("backView");
+
+frontBtn.addEventListener("click",function(){
+
+    shirt.src="../assets/images/products/t-shirt-001/tshirt-white-front.png";
+
+    frontBtn.classList.add("active-view");
+
+    backBtn.classList.remove("active-view");
+
+});
+
+backBtn.addEventListener("click",function(){
+
+    shirt.src="../assets/images/products/t-shirt-001/back-white.jpg";
+
+    backBtn.classList.add("active-view");
+
+    frontBtn.classList.remove("active-view");
+
+});
+
+/* ==========================
+   FRONT / BACK LOGIC
+========================== */
+
+const frontBtn = document.getElementById("frontView");
+const backBtn = document.getElementById("backView");
+
+frontBtn.addEventListener("click",function(){
+
+    currentView="front";
+
+    frontBtn.classList.add("active-view");
+
+    backBtn.classList.remove("active-view");
+
+    console.log("Current View :",currentView);
+
+});
+
+backBtn.addEventListener("click",function(){
+
+    currentView="back";
+
+    backBtn.classList.add("active-view");
+
+    frontBtn.classList.remove("active-view");
+
+    console.log("Current View :",currentView);
+
+});
+
+/* ==========================
+   COLOR MANAGEMENT
+========================== */
+
+let currentColor = "white";
+
+const whiteBtn = document.getElementById("whiteColor");
+const blackBtn = document.getElementById("blackColor");
+const blueBtn = document.getElementById("blueColor");
+
+function updateColorButtons(){
+
+    whiteBtn.classList.remove("active-color");
+    blackBtn.classList.remove("active-color");
+    blueBtn.classList.remove("active-color");
+
+    if(currentColor==="white"){
+
+        whiteBtn.classList.add("active-color");
+
+    }
+
+    if(currentColor==="black"){
+
+        blackBtn.classList.add("active-color");
+
+    }
+
+    if(currentColor==="blue"){
+
+        blueBtn.classList.add("active-color");
+
+    }
+
+}
+
+whiteBtn.addEventListener("click",function(){
+
+    currentColor="white";
+
+    updateColorButtons();
+
+    console.log("Current Color :",currentColor);
+
+});
+
+blackBtn.addEventListener("click",function(){
+
+    currentColor="black";
+
+    updateColorButtons();
+
+    console.log("Current Color :",currentColor);
+
+});
+
+blueBtn.addEventListener("click",function(){
+
+    currentColor="blue";
+
+    updateColorButtons();
+
+    console.log("Current Color :",currentColor);
+
+});
+
+/* ==========================
+   COLOR MANAGEMENT
+========================== */
+
+let currentColor = "white";
+
+const whiteBtn = document.getElementById("whiteColor");
+const blackBtn = document.getElementById("blackColor");
+const blueBtn = document.getElementById("blueColor");
+
+function updateColorButtons() {
+
+    whiteBtn.classList.remove("active-color");
+    blackBtn.classList.remove("active-color");
+    blueBtn.classList.remove("active-color");
+
+    switch (currentColor) {
+
+        case "white":
+            whiteBtn.classList.add("active-color");
+            break;
+
+        case "black":
+            blackBtn.classList.add("active-color");
+            break;
+
+        case "blue":
+            blueBtn.classList.add("active-color");
+            break;
+    }
+
+    console.log("Current Color:", currentColor);
+}
+
+whiteBtn.addEventListener("click", function () {
+
+    currentColor = "white";
+    updateColorButtons();
+
+});
+
+blackBtn.addEventListener("click", function () {
+
+    currentColor = "black";
+    updateColorButtons();
+
+});
+
+blueBtn.addEventListener("click", function () {
+
+    currentColor = "blue";
+    updateColorButtons();
+
+});
+
+/* Initial State */
+updateColorButtons();
+
+function saveCurrentState() {
+
+    designStates[currentColor][currentView] = {
+
+        x: posX,
+        y: posY,
+        width: currentWidth,
+        rotation: currentRotation
+
+    };
+
+}
+
+function loadCurrentState() {
+
+    const state = designStates[currentColor][currentView];
+
+    posX = state.x;
+    posY = state.y;
+    currentWidth = state.width;
+    currentRotation = state.rotation;
+
+    updatePreview();
+
+}
