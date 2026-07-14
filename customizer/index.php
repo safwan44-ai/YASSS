@@ -8,14 +8,23 @@
 
     <title>DTF Design Customizer | YASSS</title>
 
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+
     <link rel="stylesheet" href="css/customizer.css">
+    <link rel="stylesheet" href="css/preview.css">
+    <link rel="stylesheet" href="css/controls.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-
+    
 </head>
 
 <body>
+
+<?php include("../includes/header.php"); ?>
 
 <div class="customizer-container">
 
@@ -54,10 +63,9 @@
 
         <div class="tshirt-box">
 
-            <img
-                src="../assets/images/products/t-shirt-001/tshirt-white-front.png"
-                class="shirt"
-                alt="White T-Shirt">
+            <img class="shirt"
+                    src="../assets/images/products/t-shirt-001/tshirt-white-front.png"
+                    alt="Design Preview">
 
             <!-- Print Area -->
 
@@ -192,6 +200,7 @@
 
 </div>
 
+<?php include("../includes/footer.php"); ?>
 <script src="js/customizer.js"></script>
 
 </body>

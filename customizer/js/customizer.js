@@ -94,39 +94,7 @@ const designStates = {
 ========================== */
 
 let currentView = "front";
-
-const designState = {
-
-    front:{
-
-        x:65,
-        y:80,
-        width:170,
-        rotation:0,
-        image:""
-
-    },
-
-    back:{
-
-        x:65,
-        y:80,
-        width:170,
-        rotation:0,
-        image:""
-
-    }
-
-};
-let currentWidth = 170;
-let currentRotation = 0;
-
-let posX = 65;
-let posY = 80;
-
-let dragging = false;
-let offsetX = 0;
-let offsetY = 0;
+let currentColor = "white";
 
 /* ==========================
    UPLOAD IMAGE
@@ -138,62 +106,55 @@ upload.addEventListener("change", function () {
 
     if (!file) return;
 
-    preview.src = URL.createObjectURL(file);
+    const imageURL = URL.createObjectURL(file);
 
+    preview.src = imageURL;
     preview.style.display = "block";
 
     currentWidth = 170;
     currentRotation = 0;
-
     posX = 65;
     posY = 80;
 
-    updatePreview();
+    preview.onload = function () {
+
+        updatePreview();
+
+    };
 
     /* Report */
 
-    filesize.textContent =
-        (file.size / 1024 / 1024).toFixed(2) + " MB";
-
+    filesize.textContent = (file.size / 1024 / 1024).toFixed(2) + " MB";
     filetype.textContent = file.type;
 
     const img = new Image();
 
     img.onload = function () {
 
-        resolution.textContent =
-            img.width + " × " + img.height;
+        resolution.textContent = `${img.width} × ${img.height}`;
 
         if (img.width >= 3000 && img.height >= 3000) {
 
             quality.textContent = "Excellent";
-
             quality.style.color = "green";
 
-        }
-
-        else if (img.width >= 2000) {
+        } else if (img.width >= 2000) {
 
             quality.textContent = "Good";
-
             quality.style.color = "#ff9800";
 
-        }
-
-        else {
+        } else {
 
             quality.textContent = "Low Quality";
-
             quality.style.color = "red";
 
         }
 
-    }
+    };
 
-    img.src = URL.createObjectURL(file);
+    img.src = imageURL;
 
 });
-
 /* ==========================
    UPDATE PREVIEW
 ========================== */
@@ -209,8 +170,9 @@ function updatePreview() {
     preview.style.transform =
         `rotate(${currentRotation}deg)`;
 
-}
+    saveCurrentState();
 
+}
 /* ==========================
    DRAG
 ========================== */
@@ -307,35 +269,6 @@ rotateRight.addEventListener("click", function () {
 
 });
 
-/* ==========================
-   FRONT / BACK SWITCH
-========================== */
-
-const shirt = document.querySelector(".shirt");
-
-const frontBtn = document.getElementById("frontView");
-
-const backBtn = document.getElementById("backView");
-
-frontBtn.addEventListener("click",function(){
-
-    shirt.src="../assets/images/products/t-shirt-001/tshirt-white-front.png";
-
-    frontBtn.classList.add("active-view");
-
-    backBtn.classList.remove("active-view");
-
-});
-
-backBtn.addEventListener("click",function(){
-
-    shirt.src="../assets/images/products/t-shirt-001/back-white.jpg";
-
-    backBtn.classList.add("active-view");
-
-    frontBtn.classList.remove("active-view");
-
-});
 
 /* ==========================
    FRONT / BACK LOGIC
@@ -343,102 +276,66 @@ backBtn.addEventListener("click",function(){
 
 const frontBtn = document.getElementById("frontView");
 const backBtn = document.getElementById("backView");
+const shirt = document.querySelector(".shirt");
 
-frontBtn.addEventListener("click",function(){
+function changeShirtColor() {
 
-    currentView="front";
+    let imageName = "";
 
-    frontBtn.classList.add("active-view");
+    if (currentColor === "white") {
 
-    backBtn.classList.remove("active-view");
+        imageName = currentView === "front"
+            ? "tshirt-white-front.png"
+            : "tshirt-white-back.png";
 
-    console.log("Current View :",currentView);
+    } else if (currentColor === "black") {
 
-});
+        imageName = currentView === "front"
+            ? "tshirt-black-front.png"
+            : "tshirt-black-back.png";
 
-backBtn.addEventListener("click",function(){
+    } else {
 
-    currentView="back";
-
-    backBtn.classList.add("active-view");
-
-    frontBtn.classList.remove("active-view");
-
-    console.log("Current View :",currentView);
-
-});
-
-/* ==========================
-   COLOR MANAGEMENT
-========================== */
-
-let currentColor = "white";
-
-const whiteBtn = document.getElementById("whiteColor");
-const blackBtn = document.getElementById("blackColor");
-const blueBtn = document.getElementById("blueColor");
-
-function updateColorButtons(){
-
-    whiteBtn.classList.remove("active-color");
-    blackBtn.classList.remove("active-color");
-    blueBtn.classList.remove("active-color");
-
-    if(currentColor==="white"){
-
-        whiteBtn.classList.add("active-color");
+        imageName = currentView === "front"
+            ? "tshirt-blue-front.png"
+            : "tshirt-blue-back.png";
 
     }
 
-    if(currentColor==="black"){
-
-        blackBtn.classList.add("active-color");
-
-    }
-
-    if(currentColor==="blue"){
-
-        blueBtn.classList.add("active-color");
-
-    }
+    shirt.src = "../assets/images/products/t-shirt-001/" + imageName;
 
 }
 
-whiteBtn.addEventListener("click",function(){
+frontBtn.addEventListener("click", function () {
 
-    currentColor="white";
+    currentView = "front";
 
-    updateColorButtons();
+    loadCurrentState();
 
-    console.log("Current Color :",currentColor);
+    changeShirtColor();
 
-});
-
-blackBtn.addEventListener("click",function(){
-
-    currentColor="black";
-
-    updateColorButtons();
-
-    console.log("Current Color :",currentColor);
+    frontBtn.classList.add("active-view");
+    backBtn.classList.remove("active-view");
 
 });
 
-blueBtn.addEventListener("click",function(){
+backBtn.addEventListener("click", function () {
 
-    currentColor="blue";
+    currentView = "back";
 
-    updateColorButtons();
+    loadCurrentState();
 
-    console.log("Current Color :",currentColor);
+    changeShirtColor();
+
+    backBtn.classList.add("active-view");
+    frontBtn.classList.remove("active-view");
 
 });
-
 /* ==========================
    COLOR MANAGEMENT
 ========================== */
 
-let currentColor = "white";
+
 
 const whiteBtn = document.getElementById("whiteColor");
 const blackBtn = document.getElementById("blackColor");
@@ -450,22 +347,24 @@ function updateColorButtons() {
     blackBtn.classList.remove("active-color");
     blueBtn.classList.remove("active-color");
 
-    switch (currentColor) {
+    if (currentColor === "white") {
 
-        case "white":
-            whiteBtn.classList.add("active-color");
-            break;
+        whiteBtn.classList.add("active-color");
 
-        case "black":
-            blackBtn.classList.add("active-color");
-            break;
+    } else if (currentColor === "black") {
 
-        case "blue":
-            blueBtn.classList.add("active-color");
-            break;
+        blackBtn.classList.add("active-color");
+
+    } else {
+
+        blueBtn.classList.add("active-color");
+
     }
 
-    console.log("Current Color:", currentColor);
+    changeShirtColor();
+
+    loadCurrentState();
+
 }
 
 whiteBtn.addEventListener("click", function () {
@@ -492,6 +391,12 @@ blueBtn.addEventListener("click", function () {
 /* Initial State */
 updateColorButtons();
 
+function refreshCustomizer() {
+
+    loadCurrentState();
+
+}
+
 function saveCurrentState() {
 
     designStates[currentColor][currentView] = {
@@ -514,6 +419,15 @@ function loadCurrentState() {
     currentWidth = state.width;
     currentRotation = state.rotation;
 
-    updatePreview();
+    preview.style.width = currentWidth + "px";
+    preview.style.left = posX + "px";
+    preview.style.top = posY + "px";
+    preview.style.transform = `rotate(${currentRotation}deg)`;
+
+    if (preview.src !== "") {
+
+        preview.style.display = "block";
+
+    }
 
 }

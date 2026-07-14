@@ -518,3 +518,62 @@ body{
     color:#fff;
 
 }
+/* ==========================
+   COLOR SELECTOR
+========================== */
+
+.color-selector{
+
+    margin:25px 0;
+
+}
+
+.color-selector h3{
+
+    margin-bottom:12px;
+
+    font-size:18px;
+
+}
+
+.color-options{
+
+    display:flex;
+
+    gap:10px;
+
+}
+
+.color-options button{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#ececec;
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.color-options button:hover{
+
+    background:#d9d9d9;
+
+}
+
+.active-color{
+
+    background:#ef3b3a !important;
+
+    color:#fff;
+
+}

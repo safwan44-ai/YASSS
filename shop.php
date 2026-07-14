@@ -1,6 +1,18 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+?>
+
 <?php include("includes/header.php"); ?>
 
 <link rel="stylesheet" href="assets/css/shop.css">
+
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/navbar.css">
+<link rel="stylesheet" href="assets/css/footer.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/featured-products.css">
 
 <main>
 
@@ -42,7 +54,10 @@
 
 <div class="shop-top">
 
-<input type="text" placeholder="Search Product">
+<input
+    type="text"
+    id="searchProduct"
+    placeholder="Search Product">
 
 <select>
 
@@ -66,9 +81,13 @@
 
 <div class="product-icons">
 
-<a href="#"><i class="fa-regular fa-heart"></i></a>
+<a href="pages/wishlist.php">
+    <i class="fa-regular fa-heart"></i>
+</a>
 
-<a href="#"><i class="fa-regular fa-eye"></i></a>
+<a href="product.php">
+    <i class="fa-regular fa-eye"></i>
+</a>
 
 </div>
 
@@ -89,9 +108,11 @@
 </p>
 
 <a href="product.php" class="btn-primary">
+    View Details
+</a>
 
-View Details
-
+<a href="cart.php" class="btn-secondary">
+    Add To Cart
 </a>
 
 </div>
@@ -356,3 +377,11 @@ View Details
 </div>
 
 </div>
+
+</section>
+
+</main>
+
+<?php include("includes/footer.php"); ?>
+</body>
+</html>

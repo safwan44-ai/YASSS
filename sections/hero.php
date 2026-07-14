@@ -1,8 +1,10 @@
 <section class="hero">
 
     <div class="container hero-container">
-    <div class="shape" style="top:15%;left:8%;"></div>
-    <div class="shape" style="bottom:12%;right:12%;"></div>
+
+        <div class="shape" style="top:15%;left:8%;"></div>
+        <div class="shape" style="bottom:12%;right:12%;"></div>
+
         <!-- Hero Content -->
         <div class="hero-content">
 
@@ -21,33 +23,40 @@
                 Upload your own design or choose from our exclusive ready-made collections.
             </p>
 
+            <!-- Buttons -->
             <div class="hero-buttons">
 
-                
+                <a href="/YASSS/shop.php" class="btn-primary">
+                    Shop Now
+                </a>
 
-                <a href="customize.php" class="btn-secondary">
+                <a href="customizer/index.php" class="btn-secondary">
                     Customize Design
                 </a>
 
             </div>
-                <div class="hero-features">
 
-    <div class="feature-card">
-        <i class="fa-solid fa-truck-fast"></i>
-        <span>Fast Delivery</span>
-    </div>
+            <!-- Features -->
+            <div class="hero-features">
 
-    <div class="feature-card">
-        <i class="fa-solid fa-shield-halved"></i>
-        <span>Premium Quality</span>
-    </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    <span>Fast Delivery</span>
+                </div>
 
-    <div class="feature-card">
-        <i class="fa-solid fa-money-bill-wave"></i>
-        <span>Cash on Delivery</span>
-    </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Premium Quality</span>
+                </div>
 
-</div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    <span>Cash on Delivery</span>
+                </div>
+
+            </div>
+
+            <!-- Stats -->
             <div class="hero-stats">
 
                 <div class="stat-box">
@@ -72,7 +81,8 @@
         <!-- Hero Image -->
         <div class="hero-image">
 
-            <img src="assets/images/hero/hero-shirt.png" alt="YASSS Premium T-Shirt">
+            <img src="assets/images/hero/hero-shirt.png"
+                 alt="YASSS Premium T-Shirt">
 
         </div>
 
