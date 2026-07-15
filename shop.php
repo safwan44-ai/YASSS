@@ -11,7 +11,7 @@ ini_set('display_errors', 1);
 <link rel="stylesheet" href="assets/css/navbar.css">
 <link rel="stylesheet" href="assets/css/footer.css">
 <link rel="stylesheet" href="assets/css/responsive.css">
-<link rel="stylesheet" href="assets/css/buttons.css">
+<link rel="stylesheet" href="assets/css/button.css">
 <link rel="stylesheet" href="assets/css/featured-products.css">
 
 <main>
@@ -377,6 +377,14 @@ View Details
 </div>
 
 </div>
+</div> <!-- product-grid -->
+
+</div> <!-- shop-content -->
+
+</div> <!-- shop-wrapper -->
+
+</div> <!-- container -->
+
 
 </section>
 

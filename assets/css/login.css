@@ -1,48 +1,246 @@
-.auth-page{
-    padding:100px 0;
-    background:#f8f8f8;
+/* ================= LOGIN PAGE ================= */
+
+.login-page{
+    padding:80px 0;
+    background:#f5f5f5;
+    min-height:80vh;
 }
 
-.auth-box{
-    width:420px;
+.login-container{
+    max-width:1100px;
     margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
     background:#fff;
-    padding:40px;
-    border-radius:15px;
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(0,0,0,.1);
+}
+
+.login-left{
+    background:linear-gradient(135deg,#111,#ef3b3a);
+    color:#fff;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
     text-align:center;
 }
 
-.auth-box h2{
-    margin-bottom:25px;
+.login-left img{
+    width:120px;
+    height:auto;
+    margin-top:35px;
+    border-radius:12px;
 }
 
-.auth-box input{
-    width:100%;
-    padding:15px;
+.login-left h1{
+    font-size:42px;
     margin-bottom:15px;
-    border:1px solid #ddd;
-    border-radius:8px;
 }
 
-.auth-box button{
+.login-left p{
+    font-size:18px;
+    line-height:1.6;
+}
+
+.login-right{
+    padding:60px;
+    display:flex;
+    align-items:center;
+}
+
+.login-right form{
+    width:100%;
+}
+
+.login-right h2{
+    margin-bottom:30px;
+    font-size:34px;
+}
+
+.login-right input{
     width:100%;
     padding:15px;
-    border:none;
-    margin-top:10px;
+    margin-bottom:20px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:16px;
+    outline:none;
 }
 
-.auth-box p{
-    margin-top:15px;
+.login-right input:focus{
+    border-color:#ef3b3a;
 }
 
-.auth-box a{
+.login-options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.login-options a{
     color:#ef3b3a;
     text-decoration:none;
 }
 
-@media(max-width:500px){
-    .auth-box{
-        width:90%;
-    }
+.login-right .btn-primary{
+    width:100%;
+    padding:15px;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.login-right p{
+    margin-top:20px;
+    text-align:center;
+}
+
+.login-right p a{
+    color:#ef3b3a;
+    text-decoration:none;
+    font-weight:600;
+}
+
+@media(max-width:768px){
+
+.login-container{
+    grid-template-columns:1fr;
+}
+
+.login-left{
+    padding:40px 25px;
+}
+
+.login-right{
+    padding:40px 25px;
+}
+
+}
+
+.login-right p{
+    margin-top:25px;
+    text-align:center;
+    font-size:16px;
+}
+
+.login-right p a{
+    color:#ef3b3a;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.login-right p a:hover{
+    text-decoration:underline;
+}
+
+.login-right form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.login-right h2{
+    margin-bottom:10px;
+}
+
+.login-right input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.login-right input:focus{
+    border-color:#ef3b3a;
+    outline:none;
+    box-shadow:0 0 0 3px rgba(239,59,58,.15);
+}
+
+.login-right button{
+    margin-top:10px;
+}
+
+.login-right p{
+    text-align:center;
+    margin-top:10px;
+}
+
+.login-right p a{
+    color:#ef3b3a;
+    font-weight:700;
+    text-decoration:none;
+}
+
+/* Register */
+
+.login-right form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.login-right h2{
+    margin-bottom:10px;
+    font-size:38px;
+}
+
+.login-right input{
+    width:100%;
+    padding:16px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.login-right input:focus{
+    border-color:#ef3b3a;
+    box-shadow:0 0 0 4px rgba(239,59,58,.12);
+    outline:none;
+}
+
+.login-right button{
+    margin-top:10px;
+}
+
+.login-right p{
+    text-align:center;
+    margin-top:15px;
+    font-size:16px;
+}
+
+.login-right p a{
+    color:#ef3b3a;
+    font-weight:700;
+    text-decoration:none;
+}
+
+.login-right p a:hover{
+    text-decoration:underline;
+}
+
+/* Register Page */
+
+.register-page .login-left h1{
+    font-size:48px;
+}
+
+.register-page .login-left p{
+    color:#ddd;
+}
+
+.register-page .login-right h2{
+    margin-bottom:25px;
+}
+
+.register-page .login-right form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
 }

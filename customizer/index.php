@@ -122,45 +122,42 @@
 </div>
 
 <!-- =========================
-     T-Shirt Color
+     T-Shirt Selection
 ========================= -->
 
-<div class="color-section">
+    <div class="tshirt-list">
 
-    <h3>T-Shirt Color</h3>
+            <img
+            src="../assets/images/products/t-shirt-001/tshirt-white-front.png"
+            class="shirt-option active-shirt"
+            data-shirt="white">
 
-    <div class="color-options">
+            <img
+            src="../assets/images/products/t-shirt-001/tshirt-black-front.png"
+            class="shirt-option"
+            data-shirt="black">
 
-        <button
-            id="whiteColor"
-            class="color-btn active-color"
-            type="button">
+            <img
+            src="../assets/images/products/t-shirt-001/tshirt-blue-front.png"
+            class="shirt-option"
+            data-shirt="blue">
 
-            White
+            <img
+            src="../assets/images/products/t-shirt-001/tshirt-red-front.png"
+            class="shirt-option"
+            data-shirt="red">
 
-        </button>
+            <img
+            src="../assets/images/products/t-shirt-001/hoodie-front.png"
+            class="shirt-option"
+            data-shirt="hoodie">
 
-        <button
-            id="blackColor"
-            class="color-btn"
-            type="button">
-
-            Black
-
-        </button>
-
-        <button
-            id="blueColor"
-            class="color-btn"
-            type="button">
-
-            Blue
-
-        </button>
+            <img
+            src="../assets/images/products/t-shirt-001/polo-front.png"
+            class="shirt-option"
+            data-shirt="polo">
 
     </div>
-
-</div>
 
 <!-- =========================
      Rotate Controls

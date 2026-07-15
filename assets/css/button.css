@@ -1,0 +1,31 @@
+.btn-primary{
+    display:inline-block;
+    padding:12px 28px;
+    background:#ef3b3a;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+    border:none;
+}
+
+.btn-primary:hover{
+    background:#d92d2d;
+}
+
+.btn-secondary{
+    display:inline-block;
+    padding:12px 28px;
+    background:#111;
+    color:#fff;
+    text-decoration:none;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+    border:none;
+}
+
+.btn-secondary:hover{
+    background:#333;
+}

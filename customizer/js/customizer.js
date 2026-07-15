@@ -108,7 +108,7 @@ upload.addEventListener("change", function () {
 
     const imageURL = URL.createObjectURL(file);
 
-    preview.src = imageURL;
+     preview.src = URL.createObjectURL(file);
     preview.style.display = "block";
 
     currentWidth = 170;
@@ -364,6 +364,9 @@ function updateColorButtons() {
     changeShirtColor();
 
     loadCurrentState();
+    shirt.onload = function () {
+    loadCurrentState();
+};
 
 }
 
@@ -431,3 +434,39 @@ function loadCurrentState() {
     }
 
 }
+
+/* ==========================
+   Shirt Selection
+========================== */
+
+const shirtOptions=document.querySelectorAll(".shirt-option");
+
+shirtOptions.forEach(function(option){
+
+option.addEventListener("click",function(){
+
+shirtOptions.forEach(function(item){
+
+item.classList.remove("active-shirt");
+
+});
+
+this.classList.add("active-shirt");
+
+const shirt=this.dataset.shirt;
+
+if(currentView==="front"){
+
+document.querySelector(".shirt").src=
+`../assets/images/products/t-shirt-001/tshirt-${shirt}-front.png`;
+
+}else{
+
+document.querySelector(".shirt").src=
+`../assets/images/products/t-shirt-001/tshirt-${shirt}-back.png`;
+
+}
+
+});
+
+});

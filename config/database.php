@@ -1,14 +1,16 @@
 <?php
 
-$host = "localhost";
-$user = "root";
-$password = "";
-$database = "yasss_db";
+$host="localhost";
+$user="root";
+$pass="";
+$db="yasss";
 
-$conn = mysqli_connect($host, $user, $password, $database);
+$conn=mysqli_connect($host,$user,$pass,$db);
 
 if(!$conn){
-    die("Database Connection Failed : " . mysqli_connect_error());
+
+die("Database Connection Failed");
+
 }
 
 ?>
