@@ -1,5 +1,4 @@
 <?php
-
 include("config/database.php");
 
 if(isset($_POST['register'])){
@@ -7,14 +6,14 @@ if(isset($_POST['register'])){
     $fullname = mysqli_real_escape_string($conn,$_POST['fullname']);
     $email = mysqli_real_escape_string($conn,$_POST['email']);
     $phone = mysqli_real_escape_string($conn,$_POST['phone']);
+    $password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
 
-    if($_POST['password'] != $_POST['confirm_password']){
+    if($password != $confirm_password){
 
         echo "<script>alert('Passwords do not match!');</script>";
 
     }else{
-
-        $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         $check = mysqli_query($conn,"SELECT * FROM users WHERE email='$email'");
 
@@ -24,18 +23,31 @@ if(isset($_POST['register'])){
 
         }else{
 
-            mysqli_query($conn,"INSERT INTO users(fullname,email,phone,password)
-            VALUES('$fullname','$email','$phone','$password')");
+            $hash = password_hash($password,PASSWORD_DEFAULT);
 
-            echo "<script>alert('Registration Successful'); window.location='login.php';</script>";
+            $insert = mysqli_query($conn,"INSERT INTO users(fullname,email,phone,password)
+            VALUES('$fullname','$email','$phone','$hash')");
+
+            if($insert){
+
+                echo "<script>
+                alert('Registration Successful');
+                window.location='login.php';
+                </script>";
+
+            }else{
+
+                echo "<script>alert('Registration Failed');</script>";
+
+            }
 
         }
 
     }
 
 }
-
 ?>
+
 <?php include("includes/header.php"); ?>
 
 <link rel="stylesheet" href="assets/css/login.css">
@@ -44,42 +56,47 @@ if(isset($_POST['register'])){
 
 <div class="login-container">
 
-    <div class="login-left">
+<div class="login-left">
 
-        <h1>Join YASSS</h1>
+<h1>Join YASSS</h1>
 
-        <p>Create your account and start shopping premium fashion.</p>
+<p>Create your account and start shopping premium fashion.</p>
 
-    </div>
+</div>
 
-    <div class="login-right">
+<div class="login-right">
 
-        <form method="POST">
+<form method="POST">
 
-            <h2>Create Account</h2>
+<h2>Create Account</h2>
 
-                <input type="text" name="fullname" placeholder="Full Name" required>
+<input type="text" name="fullname" placeholder="Full Name" required>
 
-                <input type="email" name="email" placeholder="Email Address" required>
+<input type="email" name="email" placeholder="Email Address" required>
 
-                <input type="tel" name="phone" placeholder="Phone Number" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
 
-                <input type="password" name="password" placeholder="Password" required>
+<input type="password" name="password" placeholder="Password" required>
 
-                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+<input type="password" name="confirm_password" placeholder="Confirm Password" required>
 
-            <button type="submit" name="register" class="btn-primary">
-                Create Account
-            </button>
+<button type="submit" name="register" class="btn-primary">
 
-            <p>
-                Already have an account?
-                <a href="login.php">Login</a>
-            </p>
+Create Account
 
-        </form>
+</button>
 
-    </div>
+<p>
+
+Already have an account?
+
+<a href="login.php">Login</a>
+
+</p>
+
+</form>
+
+</div>
 
 </div>
 

@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+session_start();
 include("config/database.php");
 
 if(isset($_POST['login'])){
@@ -10,17 +10,17 @@ if(isset($_POST['login'])){
 
     $query = mysqli_query($conn,"SELECT * FROM users WHERE email='$email'");
 
-    if(mysqli_num_rows($query)>0){
+    if(mysqli_num_rows($query)==1){
 
         $user = mysqli_fetch_assoc($query);
 
         if(password_verify($password,$user['password'])){
 
-            $_SESSION['user_id']=$user['id'];
-            $_SESSION['user_name']=$user['fullname'];
-            $_SESSION['user_email']=$user['email'];
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['user_name'] = $user['fullname'];
+            $_SESSION['user_email'] = $user['email'];
 
-            header("Location:index.php");
+            header("Location: index.php");
             exit();
 
         }else{
@@ -36,7 +36,9 @@ if(isset($_POST['login'])){
     }
 
 }
+
 ?>
+
 <?php include("includes/header.php"); ?>
 
 <link rel="stylesheet" href="assets/css/login.css">
@@ -45,66 +47,70 @@ if(isset($_POST['login'])){
 
 <div class="login-container">
 
-    <div class="login-left">
+<div class="login-left">
 
-        <h1>Welcome Back</h1>
+<h1>Welcome Back</h1>
 
-        <p>Login to your YASSS account and continue shopping.</p>
+<p>Login to your YASSS account and continue shopping.</p>
 
-       
+</div>
 
-    </div>
+<div class="login-right">
 
-    <div class="login-right">
+<form method="POST">
 
-        <form method="POST">
+<h2>Sign In</h2>
 
-            <h2>Sign In</h2>
+<input
+type="email"
+name="email"
+placeholder="Email Address"
+required>
 
-            <input type="email"
-                   name="email"
-                   placeholder="Email Address"
-                   required>
+<input
+type="password"
+name="password"
+placeholder="Password"
+required>
 
-            <input type="password"
-                   name="password"
-                   placeholder="Password"
-                   required>
+<div class="login-options">
 
-            <div class="login-options">
+<label>
 
-                <label>
+<input type="checkbox">
 
-                    <input type="checkbox">
+Remember Me
 
-                    Remember Me
+</label>
 
-                </label>
+<a href="#">Forgot Password?</a>
 
-                <a href="#">Forgot Password?</a>
+</div>
 
-            </div>
+<button
+type="submit"
+name="login"
+class="btn-primary">
 
-            <button type="submit" name="login" class="btn-primary">
-                    Login
-            
-            </button>>
+Login
 
-            <p>
+</button>
 
-                Don't have an account?
+<p>
 
-                <a href="register.php">
+Don't have an account?
 
-                    Register
+<a href="register.php">
 
-                </a>
+Register
 
-            </p>
+</a>
 
-        </form>
+</p>
 
-    </div>
+</form>
+
+</div>
 
 </div>
 

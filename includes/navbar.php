@@ -1,3 +1,8 @@
+<?php
+if(session_status() == PHP_SESSION_NONE){
+    session_start();
+}
+?>
 <nav class="navbar">
 
     <div class="container nav-container">
@@ -17,12 +22,39 @@
             <li><a href="/YASSS/pages/contact.php">Contact</a></li>
         </ul>
 
-        <div class="nav-icons">
-            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
-            <a href="/YASSS/pages/wishlist.php"><i class="fa-regular fa-heart"></i></a>
-            <a href="/YASSS/cart.php"><i class="fa-solid fa-cart-shopping"></i></a>
-            <a href="/YASSS/login.php"><i class="fa-regular fa-user"></i></a>
-        </div>
+       <div class="nav-icons">
+
+    <a href="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+    </a>
+
+    <a href="/YASSS/pages/wishlist.php">
+        <i class="fa-regular fa-heart"></i>
+    </a>
+
+    <a href="/YASSS/cart.php">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+
+    <?php if(isset($_SESSION['user_id'])){ ?>
+
+    <a href="/YASSS/account.php" title="<?php echo $_SESSION['user_name']; ?>">
+        <i class="fa-solid fa-user-check"></i>
+    </a>
+
+    <a href="/YASSS/logout.php" title="Logout">
+        <i class="fa-solid fa-right-from-bracket"></i>
+    </a>
+
+    <?php }else{ ?>
+
+    <a href="/YASSS/login.php" title="Login">
+        <i class="fa-regular fa-user"></i>
+    </a>
+
+    <?php } ?>
+
+</div>
 
     </div>
 
